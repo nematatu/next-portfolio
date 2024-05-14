@@ -1,113 +1,192 @@
+'use client';
 import Image from "next/image";
+import { useEffect } from "react";
+import { Cutive_Mono,Space_Mono } from "next/font/google";
 
 export default function Home() {
+  useEffect(() => {
+    alert("Hello! This is Amatatu's Portfolio!");
+    const timer = setTimeout(() => {
+      const spinner = document.getElementById('loading');
+      if (spinner) {
+        spinner.classList.add('loaded');
+      }
+    }, 800);
+    return () => clearTimeout(timer); // コンポーネントがアンマウントされるときにタイマーをクリア
+  }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+     <div className="atom-spinner " id={"loading"}>
+            <div className="spinner-inner">
+              <div className="spinner-line"></div>
+              <div className="spinner-line"></div>
+              <div className="spinner-line"></div>
+              <div className="spinner-circle">
+                &#9679;
+              </div>
+            </div>
+          </div>
+        <article>
+            <header>
+                <div className="linux_tile">
+                    <div className="tile_header">
+                        <div className="header_btn1">
+                        </div>
+                        <div className="header_btn2">
+                        </div>
+                        <div className="header_btn3">
+                        </div>
+                    </div>
+                    <div className="tile_bar">
+                        <p className="credit">&copy;2023 amatatu.tech</p>
+                    </div>
+                    <div className="tile_bio">
+                        <div className="tile_image">
+                            <div className="icon"></div>
+                            <ul className="tile_link">
+                                <li><a href="#works">#Works</a></li>
+                                <li><a href="#timeline">#TimeLine</a></li>
+                                <li><a href="#blog">#Blog</a></li>
+                            </ul>
+                        </div >
+                        <div className="tile_main">
+                            <h1 className="tile_title">
+                                About me!
+                            </h1>
+                            <div className="dotted"></div>
+                            <ul className="tile_ul">
+                                <li className="row">
+                                    <p className="row_title">name</p>
+                                    <p className="row_content">: amatatsu</p>
+                                </li>
+                                <li className="row">
+                                    <p className="row_title">age</p>
+                                    <p className="row_content">: 19</p>
+                                </li >
+                                <li className="row">
+                                    <p className="row_title">status</p>
+                                    <p className="row_content">: Unv B2</p>
+                                </li >
+                                <li className="row">
+                                    <p className="row_title">skill</p>
+                                    <p className="row_content">: Dart,JavaScript</p>
+                                </li >
+                                <li className="row">
+                                    <p className="row_title">interest</p>
+                                    <p className="row_content">: Web,security</p>
+                                </li >
+                                <li className="row">
+                                    <p className="row_title">hobby</p>
+                                    <p className="row_content">:Badminton,Photo</p>
+                                </li >
+                                <li className="row">
+                                    <p className="row_title">social</p>
+                                    <p className="row_content">: 
+                                      <ul className="footer-nav">
+                                          <li className="twitter"><a href="https://twitter.com/T_Kanntoku"><Image src="/images/twitter.svg" alt="twitter" width={500} height={300}/></a></li>
+                                          <li className="zenn"><a href="https://zenn.dev/kotopasi"><Image src="/images/logo-only-white.svg" alt="zenn"width={500} height={300}/></a></li>
+                                          <li className="github"><a href="https://github.com/nematatu"><Image src="/images/github.svg" alt="github" width={500} height={300}/></a></li>
+                                          <li className="qiita"><a href="https://qiita.com/nematatu"><Image src="/images/favicon.png" alt="qiita" width={500} height={300}/></a></li>
+                                      </ul>
+                                    </p>
+                                </li >
+                            </ul>
+                        </div> 
+                        
+                    </div>
+                    <div className="tile_konsole">
+                        <div className="tile_arrow">
+                            
+                        </div>                        <div className="tile_flashing">
+                        </div>
+                    </div >
+                </div>
+            </header>
+            <div className="works pages" id="works">
+                <h1 className="works_title pages_title">
+                    # works
+                </h1>
+                <div className=" grid">
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
-}
+                    <div className="item">
+                        <p className="item_date">23/8/18</p>
+                        <Image src="/images/portfolio.png" alt="portfolio" width={500} height={300} />
+                        <div className="item_context">
+                            <p className="item_title">Portfolio</p>
+                            <p className="item_desc">このポートフォリオです。</p>
+                            <div className="item_tag">
+                                <p>#Web制作</p>
+                            </div>
+                        </div >
+                    </div>
+                    <div className="item">
+                        <p className="item_date">23/8/11</p>
+                        <Image src="/images/nostr.png" alt="nostr" width={500} height={300} />
+                        <div className="item_context">
+                            <p className="item_title">No name..</p>
+                            <p className="item_desc">運動記録型Nostr製SNSです</p>
+                            <div className="item_tag">
+                                <p>#Flutter</p>
+                                <p>#Nostr</p>
+                                <p>#技育展</p>
+                            </div>
+                        </div >
+                    </div>
+                    <div className="item">
+                        <p className="item_date">23/4/29</p>
+                        <Image src="/images/karuta coder.png" alt="karuta" width={500} height={300} />
+                        <div className="item_context">
+                            <p className="item_title">Karuta Coder</p>
+                            <p className="item_desc">学習かるたアプリです</p>
+                            <div className="item_tag">
+                                <p>#Flutter</p>
+                                <p>#ハッカソン</p>
+                            </div>
+                        </div >
+                    </div>
+                    </div>
+            </div>
+            <div className="timeline pages" id="timeline">
+                <h1 className="timeline-title pages_title">
+                    # TimeLine
+                </h1>
+                <ul className="timeline-ul">
+                    <li>
+                            <p className="timeline-date">
+                                2023/4/29
+                            </p>
+                            <a href="#" className="timeline-content">
+                                技育CAMPキャラバンin京都 企業賞受賞!
+                            </a>
+                </li>
+                    <li>
+                            <p className="timeline-date">
+                                2023/8/11
+                            </p>
+                            <a href="#" className="timeline-content">
+                                技育展 予選敗退…
+                            </a>
+                </li>
+                    <li>
+                            <p className="timeline-date">
+                                Now
+                            </p>
+                            <a href="#" className="timeline-content">
+                                Learning Web technology!!
+                            </a>
+                </li>
+                </ul>
+            </div>
+</article>
+<footer>
+    <ul className="footer-nav">
+        <li className="twitter"><a href="https://twitter.com/T_Kanntoku"><Image alt="twitter" src="/images/twitter.svg" width={500} height={300} /></a></li>
+        <li className="zenn"><a href="https://zenn.dev/kotopasi"><Image alt="zenn" src="/images/logo-only-white.svg" width={500} height={300} /></a></li>
+        <li className="github"><a href="https://github.com/nematatu"><Image alt="github" src="/images/github.svg" width={500} height={300} /></a></li>
+        <li className="qiita"><a href="https://qiita.com/nematatu"><Image alt="qiita" src="/images/favicon.png" width={500} height={300} /></a></li>
+    </ul>
+    <p><small>&copy;2023 amatatu.tech</small></p>
+</footer>
+    </>
+  )
+  }
